@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>File Manager</h2>
+
+<hr />
+
+<br />
+<br />
+<div class="container">
+    <div class="row card text-white bg-info mb-3">
+        <div class="col-sm-8">
+
+
+            <div class="card" style="width: 18rem;">
+               
+                <div class="card-body">
+                    <h2 class="card-title">Description</h2>
+                    <hr/>
+                    
+                    <p class="card-text mb-2 text-muted">This application is used to upload and download files, of various types.</p>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-4">
+
+
+
+            <h2 class=" card-title">Which file would you like to upload?</h2>
+
+            <hr />
+
+            @using (Html.BeginForm("Home", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="" autocomplete="off" id="docCheck" name="type">
+                    <label class="form-check-label" for="docCheck">
+                        Document:
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="" autocomplete="off" id="imgCheck" name="type">
+                    <label class="form-check-label" for="imgCheck">
+                        Image:
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="" autocomplete="off" id="vidCheck" name="type">
+                    <label class="form-check-label" for="vidCheck">
+                        Video:
+                    </label>
+                    <br />
+                    <br />
+                    <input type="file" name="files" class="btn btn-warning" />
+                    <br />
+                    <br />
+                    <input class="btn btn-success" value="Upload" type="submit" />
+                </div>
+
+
+            }
+
+        </div>
+
+    </div>
+</div>
+
